@@ -1,3 +1,5 @@
+var path = require( 'path' );
+
 module.exports = {
   entry: [
     './src/index.jsx'
@@ -8,20 +10,24 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [{
-      exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        presets: ['react', 'es2015', 'stage-1']
+    rules: [
+      {
+        test: /\.jsx?$/,
+        include: [
+          path.resolve(__dirname, "src")
+        ],
+        exclude: [
+          path.resolve(__dirname, "node_modules")
+        ],
+        loader: "babel-loader",
+        options: {
+          presets: ['react', 'es2015', 'stage-1']
+        }
       }
-    }]
+    ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
-  devServer: {
-    historyApiFallback: true,
-    contentBase: './'
+    extensions: ['.js', '.jsx']
   },
   devtool: 'source-map'
 };

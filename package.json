@@ -2,10 +2,12 @@
   "name": "react-gradebook",
   "version": "1.0.0",
   "description": "A simple react gradebook",
-  "main": "index.js",
+  "main": "index.jsx",
   "repository": "",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "start": "webpack ./src/index.jsx",
+    "dev": "webpack --progress --watch ./src/index.jsx",
+    "server": "serve",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
@@ -21,8 +23,7 @@
     "jquery": "^2.2.1",
     "jsdom": "^8.1.0",
     "mocha": "^2.4.5",
-    "webpack": "^2.5.1",
-    "webpack-dev-server": "^1.14.0"
+    "webpack": "^2.5.1"
   },
   "dependencies": {
     "axios": "^0.16.1",
