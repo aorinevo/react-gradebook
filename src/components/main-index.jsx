@@ -9,7 +9,7 @@ export class CoursesIndex extends Component {
         <Link className="btn btn-primary" to="/courses">
           Add a Post
         </Link>
-        <h1>Main</h1>
+        <h1>Mainasdfasdf</h1>
       </div>
     );
   }
