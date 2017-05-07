@@ -1,0 +1,70 @@
+{
+  "id": 1234,
+  "courseName": "Calculus I",
+  "rows": [
+    {
+      "id": 234,
+      "firstName": "Aori",
+      "lastName": "Nevo",
+      "userId": 1,
+      "assignments": [
+        {
+          "id": 6234,
+          "title": "HW1",
+          "category": "homework",
+          "score": "40.5",
+          "assignedOn": "11/04/18",
+          "dueOn": "11/16/18"
+        },
+        {
+          "id": 2349,
+          "title": "HW2",
+          "category": "homework",
+          "score": "90.5",
+          "assignedOn": "11/04/18",
+          "dueOn": "11/16/18"
+        },
+        {
+          "id": 20193,
+          "title": "HW3",
+          "category": "homework",
+          "score": "80",
+          "assignedOn": "11/04/18",
+          "dueOn": "11/16/18"
+        }
+      ]
+    },
+    {
+      "id": 239,
+      "firstName": "Amy",
+      "lastName": "Grant",
+      "userId": 12,
+      "assignments": [
+        {
+          "id": 6234,
+          "title": "HW1",
+          "category": "homework",
+          "score": "40.5",
+          "assignedOn": "11/04/18",
+          "dueOn": "11/16/18"
+        },
+        {
+          "id": 2349,
+          "title": "HW2",
+          "category": "homework",
+          "score": "90.5",
+          "assignedOn": "11/04/18",
+          "dueOn": "11/16/18"
+        },
+        {
+          "id": 20193,
+          "title": "HW3",
+          "category": "homework",
+          "score": "80",
+          "assignedOn": "11/04/18",
+          "dueOn": "11/16/18"
+        }
+      ]
+    }
+  ]
+}
