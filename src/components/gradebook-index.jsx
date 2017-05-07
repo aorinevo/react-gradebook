@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-
-export class CoursesIndex extends Component {
+export class GradebookIndex extends Component {
   
   render() {
     return (
@@ -22,4 +21,4 @@ export class CoursesIndex extends Component {
   }
 }
 
-export default CoursesIndex;
+export default GradebookIndex;
