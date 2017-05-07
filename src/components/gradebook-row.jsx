@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class CourseRow extends Component {
+class GradebookRow extends Component {
   renderDropDown(){
     return (
       <td>
@@ -10,9 +10,8 @@ class CourseRow extends Component {
     				<span className="caret"></span>
     			</button>
     			<ul className="dropdown-menu" role="menu">
-    				<li className="course-submenu-view"><Link to="/gradebook">View</Link></li>	
-    				<li className="course-submenu-edit"><Link to="#">Edit</Link></li>
-    				<li className="course-submenu-export2csv"><Link to="#">Export to CSV</Link></li>								
+    				<li className="course-submenu-view"><Link to="/gradebook">Statistics</Link></li>	
+    				<li className="course-submenu-edit"><Link to="#">Edit</Link></li>							
     				<li className="course-submenu-delete"><Link to="#"><span className="text-danger">Delete</span></Link></li>
 					</ul>
     		</div>
@@ -41,4 +40,4 @@ class CourseRow extends Component {
   }
 }
 
-export default CourseRow;
+export default GradebookRow;
