@@ -7,7 +7,6 @@ import promise from 'redux-promise';
 
 import reducers from './reducers';
 import MainIndex from './components/main-index';
-import CoursesIndex from './components/courses-index';
 import GradebookIndex from './components/gradebook-index';
 
 const createStoreWithMiddleware = applyMiddleware( promise )( createStore );
@@ -17,7 +16,6 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Switch>
-          <Route path="/courses" component={ CoursesIndex }/>
           <Route path="/gradebook" component={ GradebookIndex }/>
           <Route path="/" component={ MainIndex }/>
         </Switch>

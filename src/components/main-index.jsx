@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import clstat from '../../fixtures/json/instructor-course-list';
 import CoursesThead from './courses-thead';
 import CoursesBody from './courses-body';
+import { connect } from 'react-redux';
+import { fetchCourses } from '../actions';
 
 export class CoursesIndex extends Component {
+  componentDidMount( ){
+    this.props.fetchCourses();
+  }
   
   render() {
+    if( !this.props.courses ){
+      return null;
+    }
     return (
       <div>
         <h1>Courses
@@ -16,11 +23,15 @@ export class CoursesIndex extends Component {
         </h1>
         <table className="table table-bordered table-striped table-hover">  
           <CoursesThead />
-			    <CoursesBody courses={clstat['course_list']}/>
+			    <CoursesBody courses={this.props.courses}/>
   		  </table>
       </div>
     );
   }
 }
 
-export default CoursesIndex;
+function mapStateToProps( state ){
+  return { courses: state.courses };
+}
+
+export default connect( mapStateToProps, { fetchCourses })( CoursesIndex );

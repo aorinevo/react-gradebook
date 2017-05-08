@@ -1,23 +1,45 @@
 import axios from 'axios';
+import cldata from '../../fixtures/json/instructor-course-list';
+import gbdata from '../../fixtures/json/instructor-gradebook-data.js';
 
-export const FETCH_POSTS = 'fetch_posts';
-export const CREATE_POST = 'create_post';
+export const FETCH_GRADEBOOK = 'fetch_gradebook';
+export const FETCH_COURSES = 'fetch_courses';
+export const CREATE_COURSE = 'create_course';
+export const DELETE_COURSE = 'celete_course';
 
-const ROOT_URL = 'http://reduxblog.herokuapp.com/api';
-const API_KEY = '?key=anevo4021';
+const ROOT_URL = '/api';
+const API_KEY = '';
 
-export function fetchPosts(){
-  const request = axios.get(`${ROOT_URL}/posts${API_KEY}`);
+export function fetchGradebook(){
+  // const request = axios.get(`${ROOT_URL}/posts${API_KEY}`);
+  const request = new Promise((resolve, reject) => {
+    setTimeout(
+      () => resolve(gbdata)
+      ,1000);
+  })
   return {
-    type: FETCH_POSTS,
+    type: FETCH_GRADEBOOK,
     payload: request
   };
 }
 
-export function createPost( values, callback ){
-  const request = axios.post(`${ROOT_URL}/posts${API_KEY}`, values).then( (result) => callback() );
+export function fetchCourses(){
+  // const request = axios.get(`${ROOT_URL}/posts${API_KEY}`);
+  const request = new Promise((resolve, reject) => {
+    setTimeout(
+      () => resolve(cldata)
+      ,1000);
+  })
   return {
-    type: CREATE_POST,
+    type: FETCH_COURSES,
     payload: request
   };
 }
+
+// export function createPost( values, callback ){
+//   const request = axios.post(`${ROOT_URL}/posts${API_KEY}`, values).then( (result) => callback() );
+//   return {
+//     type: CREATE_POST,
+//     payload: request
+//   };
+// }
