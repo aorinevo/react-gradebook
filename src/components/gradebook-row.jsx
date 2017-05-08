@@ -20,18 +20,13 @@ class GradebookRow extends Component {
   }
   
   renderRow() {
-    let { data, offset } = this.props;
-    if( offset ){
-      for( var i = 1; i <= offset; i++){
-        data.unshift('');
-      }
-    }
-    data = data.map( item => <td>{item}</td> );
-    data.unshift(this.renderDropDown());
+    const { first_name, last_name, user_login } = this.props.student;
+    let data = this.props.cells.map( item => <td key={item.id}>{item.assign_points_earned}</td> );
+    data.unshift(this.renderDropDown(),<td>{first_name}</td>, <td>{last_name}</td>, <td>{user_login}</td>);
     return data;
   }
   
-  render() {
+  render() {    
     return (
       <tr>
         {this.renderRow()}

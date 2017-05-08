@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class CourseRow extends Component {
+class CoursesRow extends Component {
   renderDropDown(){
     return (
       <td>
@@ -14,31 +14,20 @@ class CourseRow extends Component {
     				<li className="course-submenu-edit"><Link to="#">Edit</Link></li>
     				<li className="course-submenu-export2csv"><Link to="#">Export to CSV</Link></li>								
     				<li className="course-submenu-delete"><Link to="#"><span className="text-danger">Delete</span></Link></li>
-					</ul>
+    			</ul>
     		</div>
     	</td>
     );
   }
   
-  renderRow() {
-    let { data, offset } = this.props;
-    if( offset ){
-      for( var i = 1; i <= offset; i++){
-        data.unshift('');
-      }
-    }
-    data = data.map( item => <td>{item}</td> );
-    data.unshift(this.renderDropDown());
-    return data;
-  }
-  
-  render() {
+  render() {    
+    const { id, name, school, semester, year } = this.props.course;
     return (
-      <tr>
-        {this.renderRow()}
+      <tr key={id}>
+        {this.renderDropDown()}<td>{id}</td><td>{name}</td><td>{school}</td><td>{semester}</td><td>{year}</td>
       </tr>
     )
   }
 }
 
-export default CourseRow;
+export default CoursesRow;

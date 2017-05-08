@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import GradebookRow from './gradebook-row';
-import GradebookColumns from './gradebook-columns';
+import GradebookBody from './gradebook-body';
+import GradebookThead from './gradebook-thead';
 import { Link } from 'react-router-dom';
+import gbdata from '../../fixtures/json/intructor-gradebook-data.js';
 
+console.log(gbdata);
 export class GradebookIndex extends Component {
   
   render() {
@@ -14,13 +16,9 @@ export class GradebookIndex extends Component {
           </Link>
         </h1>
         <table className="table table-bordered table-striped table-hover">  
-  			<thead>
-          <GradebookColumns data={['','First Name', 'Last Name', 'Login', 'HW1', 'HW2']}/>
-  			</thead>
-  			<tbody className="angb-course-list-tbody">	
-          <GradebookRow data={["Aori","Nevo","admin",80, 81]}/>
-  			</tbody>
-  		</table>
+          <GradebookThead assignments={gbdata.assignments}/>
+			    <GradebookBody students={gbdata.students} cells={gbdata.cells}/>
+  		  </table>
       </div>
     );
   }
