@@ -2,12 +2,19 @@ import React, { Component } from 'react';
 import GradebookBody from './gradebook-body';
 import GradebookThead from './gradebook-thead';
 import { Link } from 'react-router-dom';
-import gbdata from '../../fixtures/json/intructor-gradebook-data.js';
+import { connect } from 'react-redux';
+import { fetchGradebook } from '../actions';
 
-console.log(gbdata);
 export class GradebookIndex extends Component {
+  componentDidMount( ){
+    this.props.fetchGradebook();
+  }
   
   render() {
+    const { assignments, students, cells } = this.props.gradebook;
+    if( !assignments ){
+      return null;
+    }
     return (
       <div>
         <h1>Gradebook 
@@ -16,12 +23,16 @@ export class GradebookIndex extends Component {
           </Link>
         </h1>
         <table className="table table-bordered table-striped table-hover">  
-          <GradebookThead assignments={gbdata.assignments}/>
-			    <GradebookBody students={gbdata.students} cells={gbdata.cells}/>
+          <GradebookThead assignments={ assignments }/>
+			    <GradebookBody students={ students } cells={ cells }/>
   		  </table>
       </div>
     );
   }
 }
 
-export default GradebookIndex;
+function mapStateToProps( state ){
+  return { gradebook: state.gradebook };
+}
+
+export default connect( mapStateToProps, { fetchGradebook })( GradebookIndex );
