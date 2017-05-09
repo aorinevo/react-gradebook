@@ -38,7 +38,8 @@ Checkout this repo, install dependencies, then start the gulp process with the f
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{
+    **Content:** ```javascript
+    {
       "course_list": [
         {
           "id": 1,
@@ -62,7 +63,8 @@ Checkout this repo, install dependencies, then start the gulp process with the f
           "year": 2014
         }
       ]
-    }`
+    }
+    ```
  
 * **Error Response:**
 
