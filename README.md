@@ -38,10 +38,8 @@ Checkout this repo, install dependencies, then start the gulp process with the f
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** ```javascript
-    ```
-
-  ```json
+    **Content:** 
+  ```javascript
     {
       "course_list": [
         {
