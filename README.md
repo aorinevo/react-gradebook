@@ -39,6 +39,9 @@ Checkout this repo, install dependencies, then start the gulp process with the f
 
   * **Code:** 200 <br />
     **Content:** ```javascript
+    ```
+
+  ```json
     {
       "course_list": [
         {
@@ -64,7 +67,7 @@ Checkout this repo, install dependencies, then start the gulp process with the f
         }
       ]
     }
-    ```
+  ```    
  
 * **Error Response:**
 
