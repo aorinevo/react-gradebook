@@ -7,12 +7,11 @@ import { fetchGradebook } from '../actions';
 
 export class GradebookIndex extends Component {
   componentDidMount( ){
-    this.props.fetchGradebook();
+    this.props.fetchGradebook( );
   }
   
-  render() {
-    const { assignments, students, cells } = this.props.gradebook;
-    if( !assignments ){
+  render() {    
+    if( !this.props.gradebook ){
       return null;
     }
     return (

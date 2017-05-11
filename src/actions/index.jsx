@@ -10,13 +10,14 @@ export const DELETE_COURSE = 'celete_course';
 const ROOT_URL = '/api';
 const API_KEY = '';
 
-export function fetchGradebook(){
-  // const request = axios.get(`${ROOT_URL}/posts${API_KEY}`);
-  const request = new Promise((resolve, reject) => {
-    setTimeout(
-      () => resolve(gbdata)
-      ,1000);
-  })
+export function fetchGradebook( id ){
+  console.log('id ', id);
+  const request = axios.get(`http://localhost/wordpress/wp-admin/admin-ajax.php?action=gradebook&gbid=${id}`);
+  // const request = new Promise((resolve, reject) => {
+  //   setTimeout(
+  //     () => resolve(gbdata)
+  //     ,1000);
+  // })
   return {
     type: FETCH_GRADEBOOK,
     payload: request
@@ -24,12 +25,12 @@ export function fetchGradebook(){
 }
 
 export function fetchCourses(){
-  // const request = axios.get(`${ROOT_URL}/posts${API_KEY}`);
-  const request = new Promise((resolve, reject) => {
-    setTimeout(
-      () => resolve(cldata)
-      ,1000);
-  })
+  const request = axios.get(`http://localhost/wordpress/wp-admin/admin-ajax.php?action=course_list`);
+  // const request = new Promise((resolve, reject) => {
+  //   setTimeout(
+  //     () => resolve(cldata)
+  //     ,1000);
+  // })
   return {
     type: FETCH_COURSES,
     payload: request
