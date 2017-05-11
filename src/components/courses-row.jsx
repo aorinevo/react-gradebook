@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { DropdownButton, MenuItem } from 'react-bootstrap';
 
 class CoursesRow extends Component {
   renderDropDown(id){
     return (
       <td>
-        <DropdownButton key={id}>
-          <MenuItem eventKey="1" href="/gradebook/1">View</MenuItem>
-          <MenuItem eventKey="2" href="#">Edit</MenuItem>
-          <MenuItem eventKey="3" href="#">Export to CSV</MenuItem>
-          <MenuItem divider />
-          <MenuItem eventKey="4" href="#"><span className="text-danger">Delete</span></MenuItem>
-        </DropdownButton>
+        <div className="btn-group">
+         	<button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+         		<span className="caret"></span>
+         	</button>
+         	<ul className="dropdown-menu" role="menu">
+         		<li className="course-submenu-view"><Link to="/gradebook/1">View</Link></li>	
+         		<li className="course-submenu-edit"><Link to="#">Edit</Link></li>
+         		<li className="course-submenu-export2csv"><Link to="#">Export to CSV</Link></li>								
+         		<li className="course-submenu-delete"><Link to="#"><span className="text-danger">Delete</span></Link></li>
+         	</ul>
+         </div>
     	</td>
     );
   }
