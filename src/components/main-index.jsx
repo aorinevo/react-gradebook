@@ -15,7 +15,7 @@ export class CoursesIndex extends Component {
       return null;
     }
     return (
-      <div>
+      <div className="container">
         <h1>Courses
           <Link className="btn btn-primary" style={{'float': 'right', 'marginTop': '5px'}} to="/">
             Add Course
