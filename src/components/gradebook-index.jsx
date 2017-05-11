@@ -7,13 +7,14 @@ import { fetchGradebook } from '../actions';
 
 export class GradebookIndex extends Component {
   componentDidMount( ){
-    this.props.fetchGradebook( );
+    this.props.fetchGradebook( this.props.match.params.id );
   }
   
   render() {    
-    if( !this.props.gradebook ){
-      return null;
-    }
+    const { assignments, students, cells } = this.props.gradebook;
+     if( !assignments ){
+       return null;
+     }
     return (
       <div>
         <h1>Gradebook 
