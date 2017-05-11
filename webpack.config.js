@@ -1,4 +1,5 @@
-var path = require( 'path' );
+var webpack = require('webpack'),
+    path = require( 'path' );
 
 module.exports = {
   entry: [
@@ -9,6 +10,12 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js'
   },
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    })
+  ],
   module: {
     rules: [
       {

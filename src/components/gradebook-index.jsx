@@ -10,13 +10,13 @@ export class GradebookIndex extends Component {
     this.props.fetchGradebook( this.props.match.params.id );
   }
   
-  render() {    
-    const { assignments, students, cells } = this.props.gradebook;
-     if( !assignments ){
-       return null;
-     }
+  render() {        
+    if( this.props.gradebook.status != 200 ){
+      return null;
+    }
+    const { data: {assignments, students, cells} } = this.props.gradebook;
     return (
-      <div>
+      <div className="container">
         <h1>Gradebook 
           <Link className="btn btn-primary" style={{'float': 'right', 'marginTop': '5px'}} to="/">
             Add Student
