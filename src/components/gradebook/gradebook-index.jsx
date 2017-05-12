@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import GradebookBody from './gradebook-body';
+import GradebookTbody from './gradebook-tbody';
 import GradebookThead from './gradebook-thead';
+import GradebookTh from './gradebook-th';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchGradebook } from '../actions';
+import { fetchGradebook } from '../../actions';
 
 export class GradebookIndex extends Component {
   componentDidMount( ){
@@ -24,7 +25,7 @@ export class GradebookIndex extends Component {
         </h1>
         <table className="table table-bordered table-striped table-hover">  
           <GradebookThead assignments={ assignments }/>
-			    <GradebookBody students={ students } cells={ cells }/>
+			    <GradebookTbody students={ students } cells={ cells }/>
   		  </table>
       </div>
     );

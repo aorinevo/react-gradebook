@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class GradebookRow extends Component {
+class GradebookTr extends Component {
   renderDropDown(){
     return (
       <td>
@@ -35,4 +35,4 @@ class GradebookRow extends Component {
   }
 }
 
-export default GradebookRow;
+export default GradebookTr;

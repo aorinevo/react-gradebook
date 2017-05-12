@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import GradebookRow from './gradebook-row';
+import GradebookTr from './gradebook-tr';
 
-class GradebookBody extends Component {
-  
+class GradebookTbody extends Component {  
   renderRow() {
     let self = this;
     let students = this.props.students;
-    students = students.map( student => <GradebookRow student={student} cells={self.filterCellsByStudentId(student.id)} /> );
+    students = students.map( student => <GradebookTr student={student} cells={self.filterCellsByStudentId(student.id)} /> );
     return students;
   }
   
@@ -26,4 +25,4 @@ class GradebookBody extends Component {
   }
 }
 
-export default GradebookBody;
+export default GradebookTbody;

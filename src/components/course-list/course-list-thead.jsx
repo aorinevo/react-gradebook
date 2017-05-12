@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CoursesThead extends Component {
+class CourseListThead extends Component {
   render() {
     return (
       <thead>
@@ -12,4 +12,4 @@ class CoursesThead extends Component {
   }
 }
 
-export default CoursesThead;
+export default CourseListThead;
