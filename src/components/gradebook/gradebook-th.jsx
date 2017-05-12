@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class AssignmentTh extends Component {
+class GradebookTh extends Component {
   
   render() {
     return (
@@ -24,4 +24,4 @@ class AssignmentTh extends Component {
   }
 }
 
-export default AssignmentTh;
+export default GradebookTh;

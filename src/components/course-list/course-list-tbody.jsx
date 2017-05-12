@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import CoursesRow from './courses-row';
+import CourseListTr from './course-list-tr';
 
-class CoursesBody extends Component {
+class CourseListTbody extends Component {
   
   renderRow() {
     let courses = this.props.courses;
-    courses = courses.map( course => <CoursesRow course={course} /> );
+    courses = courses.map( course => <CourseListTr course={course} /> );
     return courses;
   }
   
@@ -19,4 +19,4 @@ class CoursesBody extends Component {
   }
 }
 
-export default CoursesBody;
+export default CourseListTbody;

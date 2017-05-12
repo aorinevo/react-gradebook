@@ -9,8 +9,8 @@ import * as $ from 'jquery';
 import * as Bootstrap from 'bootstrap/dist/js/bootstrap';
 
 import reducers from './reducers';
-import MainIndex from './components/main-index';
-import GradebookIndex from './components/gradebook-index';
+import CourseListIndex from './components/course-list/course-list-index';
+import GradebookIndex from './components/gradebook/gradebook-index';
 
 const createStoreWithMiddleware = applyMiddleware( promise )( createStore );
 
@@ -20,7 +20,7 @@ ReactDOM.render(
       <div>
         <Switch>
           <Route path="/gradebook/:id" component={ GradebookIndex }/>
-          <Route path="/" component={ MainIndex }/>
+          <Route path="/" component={ CourseListIndex }/>
         </Switch>
       </div>
     </BrowserRouter>

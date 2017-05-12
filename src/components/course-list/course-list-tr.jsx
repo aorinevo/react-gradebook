@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class CoursesRow extends Component {
+class CourseListTr extends Component {
   renderDropDown(id){
     return (
       <td>
@@ -30,4 +30,4 @@ class CoursesRow extends Component {
   }
 }
 
-export default CoursesRow;
+export default CourseListTr;
