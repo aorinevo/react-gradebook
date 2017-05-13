@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import GradebookTbody from './gradebook-tbody';
 import GradebookThead from './gradebook-thead';
 import GradebookTh from './gradebook-th';
-import AddStudent from './add-student';
-import AddAssignment from './add-assignment';
+import AddStudentModal from './add-student-modal';
+import AddAssignmentModal from './add-assignment-modal';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchGradebook } from '../../actions';
@@ -21,10 +21,10 @@ export class GradebookIndex extends Component {
     return (
       <div className="container">
         <h1>Gradebook 
-          <button type="button" className="btn btn-primary" data-toggle="modal" style={{float: 'right'}}data-target="#add-assignment-modal">
+          <button type="button" className="btn btn-primary" data-toggle="modal" style={{float: 'right'}} data-target="#add-assignment-modal">
             Add Assignment
           </button>
-          <button type="button" className="btn btn-primary" data-toggle="modal" style={{float: 'right'}}data-target="#add-student-modal">
+          <button type="button" className="btn btn-primary" data-toggle="modal" style={{float: 'right'}} data-target="#add-student-modal">
             Add Student
           </button>
         </h1>
@@ -32,8 +32,8 @@ export class GradebookIndex extends Component {
           <GradebookThead assignments={ assignments }/>
 			    <GradebookTbody students={ students } cells={ cells }/>
   		  </table>
-        <AddAssignment />
-        <AddStudent />
+        <AddAssignmentModal />
+        <AddStudentModal />
       </div>
     );
   }
