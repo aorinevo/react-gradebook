@@ -23,7 +23,7 @@ class CourseListTr extends Component {
   render() {    
     const { id, name, school, semester, year } = this.props.course;
     return (
-      <tr key={id}>
+      <tr>
         {this.renderDropDown(id)}<td>{id}</td><td>{name}</td><td>{school}</td><td>{semester}</td><td>{year}</td>
       </tr>
     )

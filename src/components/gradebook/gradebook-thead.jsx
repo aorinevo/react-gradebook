@@ -6,8 +6,8 @@ class GradebookThead extends Component {
   
   renderTableHeaders() {
     let assignments = this.props.assignments;
-    assignments = assignments.map( assignment => <GradebookTh assignment={assignment} /> );
-    assignments.unshift(<th></th>,<th>Fist Name</th>, <th>Last Name</th>, <th>Login</th>);
+    assignments = assignments.map( (assignment, index) => <GradebookTh key={index} assignment={assignment} /> );
+    assignments.unshift(<th key={-4}></th>,<th key={-3}>Fist Name</th>, <th key={-2}>Last Name</th>, <th key={-1}>Login</th>);
     return assignments;
   }
   
