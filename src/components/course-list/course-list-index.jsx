@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import CourseListThead from './course-list-thead';
 import CourseListTbody from './course-list-tbody';
 import { connect } from 'react-redux';
-import AddCourse from './add-course';
+import AddCourseModal from './add-course-modal';
 import { fetchCourses } from '../../actions';
 
 export class CourseListIndex extends Component {
@@ -18,7 +18,7 @@ export class CourseListIndex extends Component {
     return (
       <div className="container">
         <h1>Courses
-        <button type="button" className="btn btn-primary btn-lg" data-toggle="modal" style={{float: 'right'}}data-target="#base-modal">
+        <button type="button" className="btn btn-primary" data-toggle="modal" style={{float: 'right'}}data-target="#base-modal">
           Add Course
         </button>
         </h1>
@@ -26,7 +26,7 @@ export class CourseListIndex extends Component {
           <CourseListThead />
 			    <CourseListTbody courses={this.props.courses}/>
   		  </table>
-        <AddCourse />
+        <AddCourseModal />
       </div>
     );
   }

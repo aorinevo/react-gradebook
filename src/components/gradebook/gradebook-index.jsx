@@ -21,10 +21,10 @@ export class GradebookIndex extends Component {
     return (
       <div className="container">
         <h1>Gradebook 
-          <button type="button" className="btn btn-primary btn-lg" data-toggle="modal" style={{float: 'right'}}data-target="#add-assignment-modal">
+          <button type="button" className="btn btn-primary" data-toggle="modal" style={{float: 'right'}}data-target="#add-assignment-modal">
             Add Assignment
           </button>
-          <button type="button" className="btn btn-primary btn-lg" data-toggle="modal" style={{float: 'right'}}data-target="#add-student-modal">
+          <button type="button" className="btn btn-primary" data-toggle="modal" style={{float: 'right'}}data-target="#add-student-modal">
             Add Student
           </button>
         </h1>
