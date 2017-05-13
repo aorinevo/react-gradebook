@@ -9,8 +9,8 @@ import * as $ from 'jquery';
 import * as Bootstrap from 'bootstrap/dist/js/bootstrap';
 
 import reducers from './reducers';
-import CourseListIndex from './components/course-list/course-list-index';
-import GradebookIndex from './components/gradebook/gradebook-index';
+import CourseListIndex from './containers/course-list/course-list-index';
+import GradebookIndex from './containers/gradebook/gradebook-index';
 
 const createStoreWithMiddleware = applyMiddleware( promise )( createStore );
 

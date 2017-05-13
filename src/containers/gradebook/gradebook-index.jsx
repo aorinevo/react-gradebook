@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import GradebookTbody from './gradebook-tbody';
-import GradebookThead from './gradebook-thead';
-import GradebookTh from './gradebook-th';
-import AddStudentModal from './add-student-modal';
-import AddAssignmentModal from './add-assignment-modal';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import GradebookTbody from '../../components/gradebook/gradebook-tbody';
+import GradebookThead from '../../components/gradebook/gradebook-thead';
+import GradebookTh from '../../components/gradebook/gradebook-th';
+import AddStudentModal from '../../components/gradebook/add-student-modal';
+import AddAssignmentModal from '../../components/gradebook/add-assignment-modal';
 import { fetchGradebook } from '../../actions';
 
 export class GradebookIndex extends Component {
@@ -43,4 +43,8 @@ function mapStateToProps( state ){
   return { gradebook: state.gradebook };
 }
 
-export default connect( mapStateToProps, { fetchGradebook })( GradebookIndex );
+function mapDispatchToProps( dispatch ){
+  return { fetchGradebook: (id)=> dispatch(fetchGradebook(id))}
+}
+
+export default connect( mapStateToProps, mapDispatchToProps )( GradebookIndex );
