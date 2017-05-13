@@ -43,13 +43,14 @@ const AddAssignmentForm = props => {
       <div className="form-group">
         <label htmlFor="assign_visibility_options" className="col-sm-4 control-label">Visibility:</label>
         <div className="col-sm-6">
-          <select className="form-control" id="assign_visibility_options" name="assign_visibility_options">
+          <Field className="form-control" id="assign_visibility_options" name="assign_visibility_options" component="select">
+            <option></option>
             <option value="Students">Students</option>
             <option value="Instructor">Instructor</option>
-          </select>					
+          </Field>
         </div>
       </div>	
-      <input type="hidden" name="gbid" value="3"/>
+      <Field type="hidden" component="text" name="gbid" value="3"/>
       <div>
         Add to course 3?            			
       </div>

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import CourseListThead from './course-list-thead';
-import CourseListTbody from './course-list-tbody';
 import { connect } from 'react-redux';
-import AddCourseModal from './add-course-modal';
+import CourseListThead from '../../components/course-list/course-list-thead';
+import CourseListTbody from '../../components/course-list/course-list-tbody';
+import AddCourseModal from '../../components/course-list/add-course-modal';
 import { fetchCourses } from '../../actions';
 
 export class CourseListIndex extends Component {
@@ -36,4 +36,8 @@ function mapStateToProps( state ){
   return { courses: state.courses };
 }
 
-export default connect( mapStateToProps, { fetchCourses })( CourseListIndex );
+function mapDispatchToProps( dispatch ){
+  return { fetchCourses: ()=> dispatch(fetchCourses()) }
+}
+
+export default connect( mapStateToProps, mapDispatchToProps )( CourseListIndex );

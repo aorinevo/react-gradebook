@@ -11,11 +11,12 @@ const API_KEY = '';
 
 export function createCourse(){
   // const request = axios.get(`${ROOT_URL}?action=course`);  
+  console.log('creating course: ');
   const request = new Promise((resolve, reject) => {
     setTimeout(
       () => resolve(cldata)
       ,1000);
-  })
+  });
   return {
     type: CREATE_COURSE,
     payload: request
@@ -28,7 +29,7 @@ export function deleteCourse(){
     setTimeout(
       () => resolve(cldata)
       ,1000);
-  })
+  });
   return {
     type: CREATE_COURSE,
     payload: request
@@ -41,7 +42,7 @@ export function fetchCourses(){
     setTimeout(
       () => resolve(cldata)
       ,1000);
-  })
+  });
   return {
     type: FETCH_COURSES,
     payload: request

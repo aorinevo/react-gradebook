@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'redux';
 
 function createFormGroup( htmlFor, label, id, name, component,type){
   return (
@@ -49,5 +50,5 @@ const AddCourseForm = props => {
 };
 
 export default reduxForm({
-  form: 'add-course', // a unique identifier for this form
+  form: 'add-course', 
 })(AddCourseForm);
