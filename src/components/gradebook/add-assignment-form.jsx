@@ -41,7 +41,7 @@ const AddAssignmentForm = props => {
       {createFormGroup( "assign-due-datepicker", "Date Due:", "assign_due", "assign_due", "input", "text")}
       {createFormGroup( "assign_category", "Category:", "assign_category", "assign_category", "input", "text")}
       <div className="form-group">
-        <label for="assign_visibility_options" className="col-sm-4 control-label">Visibility:</label>
+        <label htmlFor="assign_visibility_options" className="col-sm-4 control-label">Visibility:</label>
         <div className="col-sm-6">
           <select className="form-control" id="assign_visibility_options" name="assign_visibility_options">
             <option value="Students">Students</option>

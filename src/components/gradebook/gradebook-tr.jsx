@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class GradebookTr extends Component {
   renderDropDown(){
     return (
-      <td>
+      <td key={-4}>
     		<div className="btn-group">
     			<button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
     				<span className="caret"></span>
@@ -22,7 +22,7 @@ class GradebookTr extends Component {
   renderRow() {
     const { first_name, last_name, user_login } = this.props.student;
     let data = this.props.cells.map( item => <td key={item.id}>{item.assign_points_earned}</td> );
-    data.unshift(this.renderDropDown(),<td>{first_name}</td>, <td>{last_name}</td>, <td>{user_login}</td>);
+    data.unshift(this.renderDropDown(),<td key={-3}>{first_name}</td>, <td key={-2}>{last_name}</td>, <td key={-1}>{user_login}</td>);
     return data;
   }
   

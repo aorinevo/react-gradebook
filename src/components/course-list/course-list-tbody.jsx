@@ -6,7 +6,7 @@ class CourseListTbody extends Component {
   
   renderRow() {
     let courses = this.props.courses;
-    courses = courses.map( course => <CourseListTr course={course} /> );
+    courses = courses.map( (course, index) => <CourseListTr key={index} course={course} /> );
     return courses;
   }
   

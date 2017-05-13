@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A simple react gradebook",
   "main": "index.jsx",
-  "repository": "",
+  "repository": "https://github.com/aorinevo/react-gradebook",
   "scripts": {
     "start": "webpack ./src/index.jsx",
     "dev": "webpack --progress --watch ./src/index.jsx",
@@ -12,7 +12,7 @@
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
-  "author": "",
+  "author": "Aori Nevo",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.24.1",

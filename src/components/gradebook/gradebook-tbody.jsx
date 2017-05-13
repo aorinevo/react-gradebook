@@ -6,13 +6,12 @@ class GradebookTbody extends Component {
   renderRow() {
     let self = this;
     let students = this.props.students;
-    students = students.map( student => <GradebookTr student={student} cells={self.filterCellsByStudentId(student.id)} /> );
+    students = students.map( (student, index) => <GradebookTr key={index} student={student} cells={self.filterCellsByStudentId(student.id)} /> );
     return students;
   }
   
   filterCellsByStudentId( id ) {
     let { cells } = this.props;
-    console.log(cells.filter( cell => cell.uid === id ));
     return cells.filter( cell => cell.uid === id );
   }
   
