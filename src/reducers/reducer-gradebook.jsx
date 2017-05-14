@@ -4,7 +4,7 @@ import { FETCH_GRADEBOOK } from '../actions';
 export default function( state = {}, action ){
   switch ( action.type ){
     case FETCH_GRADEBOOK:  
-    console.log(action);    
+      console.log(action);    
       return action.payload;
       break;     
     default:
