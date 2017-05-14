@@ -1,5 +1,7 @@
 # ![react-gradebook](https://raw.githubusercontent.com/aorinevo/an-gradebook/master/logos/icon-128x128.png) react-gradebook
 
+[![Build Status](https://travis-ci.org/aorinevo/react-gradebook.png?branch=master)](https://travis-ci.org/aorinevo/react-gradebook)
+
 react-gradebook is a react app that allows developers to create a UI layer for creating, removing, and updating courses, students, and gradebooks.
 
 ### Getting Started
