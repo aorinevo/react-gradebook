@@ -5,10 +5,11 @@
   "main": "index.jsx",
   "repository": "https://github.com/aorinevo/react-gradebook",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register test/**/*.spec.js",
+    "test": "mocha --recursive --compilers js:babel-core/register test/**",
     "start": "webpack ./src/index.jsx",
     "dev": "webpack --progress --watch ./src/index.jsx",
     "build": "webpack && rm -rf /Users/u060014/Repositories/wordpress/wp-content/plugins/an-gradebook/js/dist && mv dist /Users/u060014/Repositories/wordpress/wp-content/plugins/an-gradebook/js",
+    "build-local": "webpack",
     "server": "serve"
   },
   "author": "Aori Nevo",

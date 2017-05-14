@@ -8,7 +8,7 @@ class GradebookTh extends Component {
       <th>
         <div className="btn-group">
       		<button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-        		{this.props.assignment.assign_name} <span className="caret"></span>
+        		{this.props.assignment.assign_name}<span className="caret"></span>
       		</button>
       		<ul className="dropdown-menu" role="menu">	
             <li className="assign-submenu-stats"><a href="#">Statistics</a></li>
