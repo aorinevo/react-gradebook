@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import AddStudentForm from '../../components/gradebook/add-student-form';
+import AddStudentForm from '../../components/forms/student/add-student-form';
 import Header from '../../components/forms/common/header/header';
 
 class StudentEditIndex extends Component {

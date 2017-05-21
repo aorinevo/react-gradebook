@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CourseListThead from '../../components/course-list/course-list-thead';
 import CourseListTbody from '../../components/course-list/course-list-tbody';
-import AddCourseForm from '../../components/course-list/add-course-form';
+import AddCourseForm from '../../components/forms/course/add-course-form';
 import { fetchCourses } from '../../actions';
 
 export class CourseListIndex extends Component {

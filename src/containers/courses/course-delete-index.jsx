@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import DeleteCourseForm from '../../components/course-list/delete-course-form';
+import DeleteCourseForm from '../../components/forms/course/delete-course-form';
 import Header from '../../components/forms/common/header/header';
 
 class CourseDeleteIndex extends Component {

@@ -22,6 +22,9 @@ export class GradebookIndex extends Component {
     return (
       <div className="container">
         <h1>Gradebook 
+          <Link className="btn btn-primary" style={{float: 'right'}} to={`/`}>
+            Courses
+          </Link>
           <Link className="btn btn-primary" style={{float: 'right'}} to={`/gradebook/${this.props.match.params.id}/assignment/add`}>
             Add Assignment
           </Link>

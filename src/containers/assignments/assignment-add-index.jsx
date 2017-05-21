@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import AddAssignmentForm from '../../components/gradebook/add-assignment-form';
+import AddAssignmentForm from '../../components/forms/assignment/add-assignment-form';
 import Header from '../../components/forms/common/header/header';
 
 class AssignmentEditIndex extends Component {

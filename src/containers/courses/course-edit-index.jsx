@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import AddCourseForm from '../../components/course-list/add-course-form';
+import AddCourseForm from '../../components/forms/course/add-course-form';
 import Header from '../../components/forms/common/header/header';
 
 class CourseEditIndex extends Component {
