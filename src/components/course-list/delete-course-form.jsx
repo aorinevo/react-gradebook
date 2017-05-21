@@ -21,7 +21,7 @@ function createFormGroup( htmlFor, label, id, name, component,type){
   );
 }
 
-const AddCourseForm = props => {
+const DeleteCourseForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit} className="form-horizontal">
@@ -51,5 +51,5 @@ const AddCourseForm = props => {
 };
 
 export default reduxForm({
-  form: 'add-course', 
-})(AddCourseForm);
+  form: 'delete-course', 
+})(DeleteCourseForm);

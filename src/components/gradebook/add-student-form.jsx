@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { Link } from 'react-router-dom';
 
 function createFormGroup( htmlFor, label, id, name, component,type){
   return (
@@ -54,8 +55,8 @@ const AddStudentForm = props => {
         Add to course 3?            			
       </div>
       <div>
-        <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" id="edit-course-save" data-dismiss="modal" className="btn btn-primary">Save</button>
+        <Link to={`/gradebook/1`} className="btn btn-default">Close</Link>
+        <Link to={`/gradebook/1`} className="btn btn-primary">Save</Link>
       </div>
     </form>
   );

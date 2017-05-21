@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import GradebookTbody from '../../components/gradebook/gradebook-tbody';
 import GradebookThead from '../../components/gradebook/gradebook-thead';
 import GradebookTh from '../../components/gradebook/gradebook-th';
-import AddStudentModal from '../../components/gradebook/add-student-modal';
-import AddAssignmentModal from '../../components/gradebook/add-assignment-modal';
+
+import AddStudentIndex from '../students/student-add-index';
+import AddAssignmentIndex from '../assignments/assignment-add-index';
 import { fetchGradebook } from '../../actions';
 
 export class GradebookIndex extends Component {
@@ -21,19 +22,17 @@ export class GradebookIndex extends Component {
     return (
       <div className="container">
         <h1>Gradebook 
-          <button type="button" className="btn btn-primary" data-toggle="modal" style={{float: 'right'}} data-target="#add-assignment-modal">
+          <Link className="btn btn-primary" style={{float: 'right'}} to={`/gradebook/${this.props.match.params.id}/assignment/add`}>
             Add Assignment
-          </button>
-          <button type="button" className="btn btn-primary" data-toggle="modal" style={{float: 'right'}} data-target="#add-student-modal">
+          </Link>
+          <Link className="btn btn-primary" style={{float: 'right'}} to={`/gradebook/${this.props.match.params.id}/student/add`}>
             Add Student
-          </button>
+          </Link>
         </h1>
         <table className="table table-bordered table-striped table-hover">  
           <GradebookThead assignments={ assignments }/>
 			    <GradebookTbody students={ students } cells={ cells }/>
   		  </table>
-        <AddAssignmentModal />
-        <AddStudentModal />
       </div>
     );
   }
