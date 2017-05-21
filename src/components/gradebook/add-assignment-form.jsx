@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { Link } from 'react-router-dom';
 
 function createFormGroup( htmlFor, label, id, name, component,type){
   return (
@@ -50,13 +51,13 @@ const AddAssignmentForm = props => {
           </Field>
         </div>
       </div>	
-      <Field type="hidden" component="text" name="gbid" value="3"/>
+      <Field type="hidden" component="text" name="gbid" value={props.gbid}/>
       <div>
-        Add to course 3?            			
+        Add to course {props.gbid}?            			
       </div>
       <div>
-        <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" id="edit-course-save" data-dismiss="modal" className="btn btn-primary">Save</button>
+        <Link to={`/gradebook/${props.gbid}`} className="btn btn-default">Close</Link>
+        <Link to={`/gradebook/${props.gbid}`} className="btn btn-primary">Save</Link>
       </div>
     </form>
   );

@@ -9,7 +9,7 @@ class StudentEditIndex extends Component {
     return (
       <div className="container">
         <Header text="Add Student" />
-        <AddStudentForm />
+        <AddStudentForm gbid={this.props.match.params.id}/>
       </div>
     );
   }

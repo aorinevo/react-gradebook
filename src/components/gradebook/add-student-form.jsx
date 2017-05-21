@@ -20,6 +20,10 @@ function createFormGroup( htmlFor, label, id, name, component,type){
   );
 }
 
+function getId(){
+  return this.props.match.params.id;
+}
+
 const AddStudentForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
@@ -55,8 +59,8 @@ const AddStudentForm = props => {
         Add to course 3?            			
       </div>
       <div>
-        <Link to={`/gradebook/1`} className="btn btn-default">Close</Link>
-        <Link to={`/gradebook/1`} className="btn btn-primary">Save</Link>
+        <Link to={`/gradebook/${props.gbid}`} className="btn btn-default">Close</Link>
+        <Link to={`/gradebook/${props.gbid}`} className="btn btn-primary">Save</Link>
       </div>
     </form>
   );
