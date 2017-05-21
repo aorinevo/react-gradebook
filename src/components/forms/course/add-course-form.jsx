@@ -1,6 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'redux';
+import { Link } from 'react-router-dom';
 
 function createFormGroup( htmlFor, label, id, name, component,type){
   return (
@@ -42,8 +43,8 @@ const AddCourseForm = props => {
       {createFormGroup( "course_semester", "Semester:", "course_semester", "semester", "input", "text")}
       {createFormGroup( "course_year", "Year:", "course_year", "year", "input", "number")}
       <div>
-        <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" id="edit-course-save" data-dismiss="modal" className="btn btn-primary">Save</button>
+        <Link className="btn btn-default" to="/courses">Close</Link>
+        <Link className="btn btn-primary" to="/courses">Save</Link>
       </div>
     </form>
   );

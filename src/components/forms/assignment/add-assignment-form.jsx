@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { Link } from 'react-router-dom';
 
 function createFormGroup( htmlFor, label, id, name, component,type){
   return (
@@ -19,7 +20,7 @@ function createFormGroup( htmlFor, label, id, name, component,type){
   );
 }
 
-const AddStudentForm = props => {
+const AddAssignmentForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit} className="form-horizontal">
@@ -43,24 +44,25 @@ const AddStudentForm = props => {
       <div className="form-group">
         <label htmlFor="assign_visibility_options" className="col-sm-4 control-label">Visibility:</label>
         <div className="col-sm-6">
-          <select className="form-control" id="assign_visibility_options" name="assign_visibility_options">
+          <Field className="form-control" id="assign_visibility_options" name="assign_visibility_options" component="select">
+            <option></option>
             <option value="Students">Students</option>
             <option value="Instructor">Instructor</option>
-          </select>					
+          </Field>
         </div>
       </div>	
-      <input type="hidden" name="gbid" value="3"/>
+      <Field type="hidden" component="text" name="gbid" value={props.gbid}/>
       <div>
-        Add to course 3?            			
+        Add to course {props.gbid}?            			
       </div>
       <div>
-        <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" id="edit-course-save" data-dismiss="modal" className="btn btn-primary">Save</button>
+        <Link to={`/gradebook/${props.gbid}`} className="btn btn-default">Close</Link>
+        <Link to={`/gradebook/${props.gbid}`} className="btn btn-primary">Save</Link>
       </div>
     </form>
   );
 };
 
 export default reduxForm({
-  form: 'add-student', // a unique identifier for this form
-})(AddStudentForm);
+  form: 'add-assignment', // a unique identifier for this form
+})(AddAssignmentForm);
