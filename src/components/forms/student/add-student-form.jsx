@@ -2,24 +2,6 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
 
-function createFormGroup( htmlFor, label, id, name, component,type){
-  return (
-    <div className="form-group">
-      <label htmlFor={htmlFor} className="col-sm-3 control-label">{label}</label>
-      <div className="col-sm-7">
-        <Field
-          className="form-control"
-          id={id}
-          name={name}
-          value=""
-          component={component}
-          type={type}
-        />
-      </div>
-    </div>
-  );
-}
-
 function getId(){
   return this.props.match.params.id;
 }
@@ -27,44 +9,69 @@ function getId(){
 const AddStudentForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
-    <form onSubmit={handleSubmit} className="form-horizontal">
+    <form onSubmit={handleSubmit} className="form-horizontal">   
       <div className="form-group">
         <input type="hidden" name="id" value=""/>  
-        <label htmlFor="assign_name" className="col-sm-3 control-label">Title:</label>
-        <div className="col-sm-7">
+        <label htmlFor="firstname" className="col-sm-4 control-label">First Name:</label>
+        <div className="col-sm-6">
           <Field
             className="form-control"
-            id="assign_name"
-            name="assign_name"
+            id="first_name"
+            name="first_name"
             value=""
             component="input"
             type="text"
           />
         </div>
       </div>
-      {createFormGroup( "assign-date-datepicker", "Date Assigned:", "assign_date", "assign_date", "input", "text")}
-      {createFormGroup( "assign-due-datepicker", "Date Due:", "assign_due", "assign_due", "input", "text")}
-      {createFormGroup( "assign_category", "Category:", "assign_category", "assign_category", "input", "text")}
+      
       <div className="form-group">
-        <label htmlFor="assign_visibility_options" className="col-sm-4 control-label">Visibility:</label>
+        <label htmlFor="lastname" className="col-sm-4 control-label">Last Name:</label>
         <div className="col-sm-6">
-          <select className="form-control" id="assign_visibility_options" name="assign_visibility_options">
-            <option value="Students">Students</option>
-            <option value="Instructor">Instructor</option>
-          </select>					
+          <Field
+            className="form-control"
+            id="last_name"
+            name="last_name"
+            value=""
+            component="input"
+            type="text"
+          />
         </div>
-      </div>	
-      <input type="hidden" name="gbid" value="3"/>
-      <div>
-        Add to course 3?            			
       </div>
-      <div>
-        <Link to={`/gradebook/${props.gbid}`} className="btn btn-default">Close</Link>
-        <Link to={`/gradebook/${props.gbid}`} className="btn btn-primary">Save</Link>
+      
+      <div className="form-group">
+        <input type="hidden" name="id" value=""/>  
+        <label htmlFor="lastname" className="col-sm-4 control-label">Last Name:</label>
+        <div className="col-sm-6">
+          <Field
+            className="form-control"
+            id="user_login"
+            name="id-exists"
+            value=""
+            component="input"
+            type="text"
+          />
+        </div>
+        <input type="hidden" name="gbid" value="3" />		
       </div>
+      <Link className="btn btn-default" to={`/gradebook/${props.gbid}`}>Close</Link>
+      <Link className="btn btn-primary" to={`/gradebook/${props.gbid}`}>Save</Link>
     </form>
   );
 };
+
+/* Example Payload to send as param to createStudent action.
+{
+  "first_name": "asdf",
+  "last_name": "asdf",
+  "id-exists": "",
+  "gbid": "3",
+  "selected": false,
+  "user_login": null
+}
+*/
+
+// TODO - Add validation.
 
 export default reduxForm({
   form: 'add-student', // a unique identifier for this form
