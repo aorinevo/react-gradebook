@@ -1,17 +1,21 @@
-import React from 'react';
-import { Field, reduxForm } from 'redux-form';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Field, reduxForm } from 'redux-form'
+import { Link } from 'react-router-dom'
 
 function getId(){
   return this.props.match.params.id;
 }
 
-const AddStudentForm = props => {
+function handelSubmit(){
+  console.log('test');
+}
+
+const AddStudentForm = (props) => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit} className="form-horizontal">   
       <div className="form-group">
-        <input type="hidden" name="id" value=""/>  
+        <Field component="input" type="hidden" name="id" value=""/>  
         <label htmlFor="firstname" className="col-sm-4 control-label">First Name:</label>
         <div className="col-sm-6">
           <Field
@@ -40,7 +44,6 @@ const AddStudentForm = props => {
       </div>
       
       <div className="form-group">
-        <input type="hidden" name="id" value=""/>  
         <label htmlFor="lastname" className="col-sm-4 control-label">Last Name:</label>
         <div className="col-sm-6">
           <Field
@@ -52,7 +55,7 @@ const AddStudentForm = props => {
             type="text"
           />
         </div>
-        <input type="hidden" name="gbid" value="3" />		
+        <Field component="input" type="hidden" name="gbid" value={props.gbid} />		
       </div>
       <Link className="btn btn-default" to={`/gradebook/${props.gbid}`}>Close</Link>
       <Link className="btn btn-primary" to={`/gradebook/${props.gbid}`}>Save</Link>
