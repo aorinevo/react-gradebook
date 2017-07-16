@@ -1,7 +1,11 @@
 {
   "name": "gradebook-js",
-  "version": "0.1.0",
+  "author": "Aori Nevo",
+  "license": "ISC",
+  "version": "2.0.0",
+  "description": "A simple react gradebook",
   "private": true,
+  "repository": "https://github.com/aorinevo/react-gradebook",
   "dependencies": {
     "@types/jest": "^20.0.2",
     "@types/lodash": "^4.14.69",
@@ -30,6 +34,7 @@
   "scripts": {
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
+    "build-wordpress": "webpack && rm -rf /Users/u060014/Repositories/wordpress/wp-content/plugins/an-gradebook/js/dist && mv dist /Users/u060014/Repositories/wordpress/wp-content/plugins/an-gradebook/js",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject"
   }
